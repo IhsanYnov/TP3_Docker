@@ -7,20 +7,16 @@ Une fois le fichier créer
 On lance le fichier 
  > docker-compose up
  
- Notre environnement est mis en place , nous allons maintenant le tester avec un page index php
+Notre environnement est mis en place , nous allons maintenant le tester avec un page index php
+
+Nous créons donc un fichier php qui executera une commande echo appeller test.php
+
+Nous le plaçons dans /opt/apache2
+
+Et notre page php est bien accessible 
 
 Créer et configurer un fichier index.php dans /opt/apache2
-vim .php/index.php
+Notre page est accessible via localhost/test.php
 
-<html>
-    <head>
-        <title>PHP Test</title>
-    </head>
-    <body>
-        <?php 
-            echo '<p>Hello World</p>';
-            phpinfo(); ?>
-    </body>
-</html>
 
-Vérifier que la page est bien accessible
+
