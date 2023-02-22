@@ -1,0 +1,30 @@
+version: '3'
+
+
+services:
+  apache:
+    image: httpd
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    depends_on:
+      - php
+  php:
+    image: php:7.4-apache
+    volumes:
+      - ./html:/var/www/html/
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: Lemdpduroot10
+    volumes:
+      - ./data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mysql
